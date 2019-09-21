@@ -86,16 +86,17 @@ document.addEventListener('DOMContentLoaded', function() {
         var timerText_sec = document.getElementById('timerText_sec');
 
         //startTime = Date.now();
-        milliTime = (timerText_sec.value * 1000) + (timerText_min.value * 60000) + (timerText_hr.value * 3600000)
-            //alert(milliTime)
-        window.setAlarm(milliTime / 60000)
-            //setTimeout(function() {
-            // currentTime = Date.now() - startTime;
-            //timerText_hr = toString(currentTime)
-            //currentTime = Date.now() - startTime
-            //timerText_sec.value = currentTime
-            //alert("Study Timer Done!");
-            //}, false);
+        minTime = (timerText_sec.value / 60) + (timerText_min.value) + (timerText_hr.value * 60);
+        //alert(milliTime)
+        //alert(minTime)
+        window.setAlarm(parseFloat(minTime));
+        //setTimeout(function() {
+        // currentTime = Date.now() - startTime;
+        //timerText_hr = toString(currentTime)
+        //currentTime = Date.now() - startTime
+        //timerText_sec.value = currentTime
+        //alert("Study Timer Done!");
+        //}, false);
 
     }, false);
 
