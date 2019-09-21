@@ -88,14 +88,14 @@ document.addEventListener('DOMContentLoaded', function() {
         //startTime = Date.now();
         milliTime = (timerText_sec.value * 1000) + (timerText_min.value * 60000) + (timerText_hr.value * 3600000)
             //alert(milliTime)
-
-        setTimeout(function() {
-            currentTime = Date.now() - startTime;
-            timerText_hr = toString(currentTime)
-                //currentTime = Date.now() - startTime
-                //timerText_sec.value = currentTime
-            alert("Study Timer Done!");
-        }, false);
+        window.setAlarm(milliTime / 60000)
+            //setTimeout(function() {
+            // currentTime = Date.now() - startTime;
+            //timerText_hr = toString(currentTime)
+            //currentTime = Date.now() - startTime
+            //timerText_sec.value = currentTime
+            //alert("Study Timer Done!");
+            //}, false);
 
     }, false);
 
