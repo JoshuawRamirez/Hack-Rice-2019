@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var submitAll = document.getElementById('submitAll');
     var studyTimer = document.getElementById('studyTimer');
     var totalSleep = window.localStorage.getItem('sleeptxt');
+    document.getElementById("storageText").innerHTML = totalSleep;
 
     // sleepButton.addEventListener('click', function() {
     //     window.open('https://hack.rice.edu/');
@@ -24,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
         var studytxt = document.getElementById("studyText").value;
         var mealtxt = document.getElementById("mealText").value;
 
-        window.localStorage.setItem('sleeptxt', totalSleep + sleeptxt);
+        totalSleep = parseint(totalSleep) + parseint(sleeptxt);
+        window.localStorage.setItem('sleeptxt', totalSleep);
         window.localStorage.setItem('studytxt', studytxt);
         window.localStorage.setItem('mealtxt', mealtxt);
 
