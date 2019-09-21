@@ -8,11 +8,10 @@
         "default_popup": "popup.html"
     },
     "background": {
-        "scripts": ["popup.js"],
-        "persistent": false
+        "scripts": ["timer.js"],
+        "persistent": true
     },
     "permissions": [
-        "activeTab",
-        "tabs"
+        "activeTab", "alarms"
     ]
 }

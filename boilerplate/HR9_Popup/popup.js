@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var studytxt = document.getElementById("studyText").value;
         var mealtxt = document.getElementById("mealText").value;
 
-        totalSleep = parseint(totalSleep) + parseint(sleeptxt);
+        totalSleep = toString(parseInt(totalSleep) + parseInt(sleeptxt));
         window.localStorage.setItem('sleeptxt', totalSleep);
         window.localStorage.setItem('studytxt', studytxt);
         window.localStorage.setItem('mealtxt', mealtxt);
@@ -80,11 +80,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("data").appendChild(node);
     }, false);
 
-
-    function backgroundFunction() {
-        alert('Background, reporting for duty!')
-    }
-
     studyTimer.addEventListener('click', function() {
         var timerText_hr = document.getElementById('timerText_hr');
         var timerText_min = document.getElementById('timerText_min');
@@ -93,22 +88,19 @@ document.addEventListener('DOMContentLoaded', function() {
         //startTime = Date.now();
         milliTime = (timerText_sec.value * 1000) + (timerText_min.value * 60000) + (timerText_hr.value * 3600000)
             //alert(milliTime)
-        chrome.runtime.getBackgroundPage(function(backgroundPage) {
-            backgroundPage.backgroundFunction()
-        })
-        setTimeout(function() { <<
-            << << < HEAD
-            currentTime = Date.now() - startTime
-            timerText_hr = toString(currentTime) ===
-                === =
+
+        setTimeout(function() {
+            currentTime = Date.now() - startTime;
+            timerText_hr = toString(currentTime)
                 //currentTime = Date.now() - startTime
                 //timerText_sec.value = currentTime
-                alert("Study Timer Done!") >>>
-                >>> > 7 cac944b7319cca64fbd82fee375628eb626a869
-        }, milliTime);
-    }, false);
-}, false);
+            alert("Study Timer Done!");
+        }, false);
 
-//chrome.tabs.query({active : true, currentWindow : true}, function(tabs){
-//chrome.tabs.remove(tabs[0].id)
-//})
+    }, false);
+
+
+
+    //chrome.tabs.query({active : true, currentWindow : true}, function(tabs){
+    //chrome.tabs.remove(tabs[0].id)
+});
