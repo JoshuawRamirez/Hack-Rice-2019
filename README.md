@@ -1,4 +1,4 @@
-# HackRice 9 | First Timer's Track
+# HackRice 9 | First Timer's Track "yay"
 
 ## Track Description
 
