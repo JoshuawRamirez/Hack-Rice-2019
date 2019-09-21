@@ -86,9 +86,10 @@ document.addEventListener('DOMContentLoaded', function() {
         //startTime = Date.now();
         milliTime = (timerText_sec.value * 1000) + (timerText_min.value * 60000) + (timerText_hr.value * 3600000)
             //alert(milliTime)
-        chrome.runtime.getBackgroundPage(function(backgroundPage) {
-            backgroundPage.studyTimer(milliTime)
-        })
+        chrome.alarms.create({ delayInSeconds: 1.0 })
+        chrome.alarms.onAlarm.addEventListener(function() {
+            alert("Timer Finished!")
+        });
 
     }, false);
 
