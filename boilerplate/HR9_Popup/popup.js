@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
         //startTime = Date.now();
         minTime = (timerText_sec.value / 60) + (timerText_min.value) + (timerText_hr.value * 60);
         //alert(milliTime)
-        alert(minTime)
-        window.setAlarm(parseInt(minTime));
+        //alert(minTime)
+        window.setAlarm(parseFloat(minTime));
         //setTimeout(function() {
         // currentTime = Date.now() - startTime;
         //timerText_hr = toString(currentTime)
