@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  var checkPageButton = document.getElementById('checkPage');
+  var sleepButton = document.getElementById('sleepHours');
 
-  checkPageButton.addEventListener('click', function() {
+  sleepButton.addEventListener('click', function() {
      window.open('https://hack.rice.edu/');
   }, false);
   
