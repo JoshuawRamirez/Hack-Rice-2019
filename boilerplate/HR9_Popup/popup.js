@@ -71,5 +71,4 @@ document.addEventListener('DOMContentLoaded', function() {
             alert("Study Timer Done!")
         }, milliTime);
     }, false);
-
 }, false);
