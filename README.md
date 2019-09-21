@@ -1,6 +1,6 @@
-# HackRice 9 | First Timer's Track
+# HackRice 9 | First Timer's Track "yay"
 
-## Track Descriptione
+## Track Description
 
 We live in a society where everything is customized, from your phone case to your coffee order. So why shouldn't your browser be too? Chrome extensions allow you to craft and tailor your ideal browsing experience in a few short lines of code. In this track, you'll build a Chrome extension from scratch using HTML/CSS and JavaScript. 
 
