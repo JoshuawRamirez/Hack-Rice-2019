@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
             alert("Please fill out the entire form")
         } else {
             if (parseFloat(sleeptxt) < 8) {
-                var message = "Go To SLEEP!!! STOP WORKING, Ryan!!! :'(";
+                var message = "You should try getting some rest :)";
                 alert(message);
             } else if ((parseFloat(sleeptxt) >= 8)) {
-                alert("Good job sleeping!!");
+                alert("Good job on getting enough sleep!!");
             } else {
                 alert("Please only enter numbers");
             }
@@ -46,17 +46,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 var message = "Good job, today! But now it's time to take a break! ^_^";
                 alert(message);
             } else if (parseFloat(studytxt) < 1) {
-                alert("Make sure you get you work done!");
+                alert("You should maybe get some work done, you'll feel accomplished!");
             } else if (parseFloat(studytxt) >= 1 && parseFloat(studytxt) < 5) {
                 alert("Good job on your work-life balance today!!");
             } else {
                 alert("Please only enter numbers");
             }
             if (parseFloat(mealtxt) < 3) {
-                var message = "You need to eat! Take care of you self and have some yummy munchies! 8)";
+                var message = "Go to the servery, your brain needs fuel!";
                 alert(message);
             } else if ((parseFloat(mealtxt) >= 3)) {
-                alert("Good job eating!!");
+                alert("Good job on keeping yourself fed!");
             } else {
                 alert("Please only enter numbers");
             }

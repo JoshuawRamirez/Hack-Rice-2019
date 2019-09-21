@@ -16,10 +16,10 @@ h1 {
 
 .buttons {
     background-color: rgb(73, 116, 233);
-    border: solid 1px transparent;
-    border-radius: 4px;
+    border: solid 1px rgb(73, 116, 233);
+    border-radius: 6px;
     color: white;
-    padding: 10x 15px;
+    padding: 3px 12px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -29,4 +29,10 @@ h1 {
 
 .bodies{
   margin: 50px;  
+}
+
+#submitAll{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px 14px;
 }
