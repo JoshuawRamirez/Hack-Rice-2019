@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
 
     // var sleepButton = document.getElementById('sleepHours');
@@ -52,8 +54,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert("Please only enter numbers");
             }
         }
-        document.writeln("Data: " + " Sleep Time: " + sleeptxt + " Study Time: \
-        " + studytxt + " Meals: " + mealtxt)
+        //adds sleep data to bottom of pop up
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode("Hours of Sleep: " + parseFloat(sleeptxt));
+        node.appendChild(textnode);
+        document.getElementById("data").appendChild(node);
+
+        //adds study data to bottom of pop up
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode("Hours of Study: " + parseFloat(studytxt));
+        node.appendChild(textnode);
+        document.getElementById("data").appendChild(node);
+
+        //adds meal data to bottom of pop up
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode("Meals Eaten: " + parseFloat(mealtxt));
+        node.appendChild(textnode);
+        document.getElementById("data").appendChild(node);
     }, false);
 
 
