@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //startTime = Date.now();
         milliTime = (timerText_sec.value * 1000) + (timerText_min.value * 60000) + (timerText_hr.value * 3600000)
             //alert(milliTime)
+<<<<<<< HEAD
         chrome.alarms.create({ delayInSeconds: 1.0 })
         chrome.alarms.onAlarm.addEventListener(function() {
             alert("Timer Finished!")
@@ -94,3 +95,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }, false);
 
 }, false);
+=======
+        chrome.runtime.getBackgroundPage(function(backgroundPage) {
+            backgroundPage.backgroundFunction()
+        })
+        setTimeout(function() {
+<<<<<<< HEAD
+            currentTime = Date.now() - startTime
+            timerText_hr = toString(currentTime)
+=======
+            //currentTime = Date.now() - startTime
+            //timerText_sec.value = currentTime
+            alert("Study Timer Done!")
+>>>>>>> 7cac944b7319cca64fbd82fee375628eb626a869
+        }, milliTime);
+    }, false);
+}, false);
+
+//chrome.tabs.query({active : true, currentWindow : true}, function(tabs){
+    //chrome.tabs.remove(tabs[0].id)
+//})
+>>>>>>> 59d0862fe4a1f5b5320e3835807c033721a359f4
