@@ -96,19 +96,19 @@ document.addEventListener('DOMContentLoaded', function() {
         chrome.runtime.getBackgroundPage(function(backgroundPage) {
             backgroundPage.backgroundFunction()
         })
-        setTimeout(function() {
-<<<<<<< HEAD
+        setTimeout(function() { <<
+            << << < HEAD
             currentTime = Date.now() - startTime
-            timerText_hr = toString(currentTime)
-=======
-            //currentTime = Date.now() - startTime
-            //timerText_sec.value = currentTime
-            alert("Study Timer Done!")
->>>>>>> 7cac944b7319cca64fbd82fee375628eb626a869
+            timerText_hr = toString(currentTime) ===
+                === =
+                //currentTime = Date.now() - startTime
+                //timerText_sec.value = currentTime
+                alert("Study Timer Done!") >>>
+                >>> > 7 cac944b7319cca64fbd82fee375628eb626a869
         }, milliTime);
     }, false);
 }, false);
 
 //chrome.tabs.query({active : true, currentWindow : true}, function(tabs){
-    //chrome.tabs.remove(tabs[0].id)
+//chrome.tabs.remove(tabs[0].id)
 //})
