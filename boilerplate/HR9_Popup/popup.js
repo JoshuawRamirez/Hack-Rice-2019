@@ -7,10 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // var studyButton = document.getElementById('studyHours');
     // var mealsButton = document.getElementById('mealsEaten');
     var submitAll = document.getElementById('submitAll')
+    var studyTimer = document.getElementById('studyTimer')
         //change html text to submit all!!
-
-    var date = new Date()
-    var time = date.getTime()
 
     // sleepButton.addEventListener('click', function() {
     //     window.open('https://hack.rice.edu/');
@@ -62,6 +60,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         document.writeln("Data: " + " Sleep Time: " + sleeptxt + " Study Time: \
         " + studytxt + " Meals: " + mealtxt)
+    }, false);
+
+
+    studyTimer.addEventListener('click', function() {
+        startTime = Date.now();
+        setTimeout(function() {
+            currentTime = Date.now() - startTime
+            alert(currentTime)
+        }, 2000);
     }, false);
 
 }, false);
