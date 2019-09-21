@@ -1,5 +1,5 @@
 body {
-    height: 650px;
+    height: 600px;
     width: 500px;
 }
 
@@ -9,40 +9,24 @@ h1 {
     color: blue
 }
 
-#sleepHours {
-    background-color: rgb(73, 116, 233);
-    border: none;
-    color: white;
-    padding: 10x 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
-#studyHours {
-    background-color: rgb(73, 116, 233);
-    border: none;
-    color: white;
-    padding: 10x 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
-#mealsEaten {
-    background-color: rgb(73, 116, 233);
-    border: none;
-    color: white;
-    padding: 10x 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
 
 #data {
     font-size: 22px;
 }
 
+.buttons {
+    background-color: rgb(73, 116, 233);
+    border: solid 1px transparent;
+    border-radius: 4px;
+    color: white;
+    padding: 10x 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+.bodies{
+  margin: 50px;  
+}

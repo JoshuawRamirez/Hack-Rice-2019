@@ -65,18 +65,36 @@ document.addEventListener('DOMContentLoaded', function() {
         var node = document.createElement("LI");
         var textnode = document.createTextNode("Hours of Sleep: " + parseFloat(sleeptxt));
         node.appendChild(textnode);
+        node.style.margin = '40px';
+        if (parseFloat(sleeptxt) < 8) {
+            node.style.color = 'red';
+        } else {
+            node.style.color = 'white';
+        }
         document.getElementById("data").appendChild(node);
 
         //adds study data to bottom of pop up
         var node = document.createElement("LI");
         var textnode = document.createTextNode("Hours of Study: " + parseFloat(studytxt));
         node.appendChild(textnode);
+        node.style.margin = '40px';
+        if (parseFloat(studytxt) >= 1 && parseFloat(studytxt) < 5) {
+            node.style.color = 'white';
+        } else {
+            node.style.color = 'red';
+        }
         document.getElementById("data").appendChild(node);
 
         //adds meal data to bottom of pop up
         var node = document.createElement("LI");
         var textnode = document.createTextNode("Meals Eaten: " + parseFloat(mealtxt));
         node.appendChild(textnode);
+        node.style.margin = '40px';
+        if (parseFloat(mealtxt) === 3) {
+            node.style.color = 'white';
+        } else {
+            node.style.color = 'red';
+        }
         document.getElementById("data").appendChild(node);
     }, false);
 
