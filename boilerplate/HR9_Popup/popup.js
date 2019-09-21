@@ -96,6 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
             node.style.color = 'red';
         }
         document.getElementById("data").appendChild(node);
+
+        if(sleeptxt !== "" && studytxt !== "" && mealtxt !== ""){
+            document.getElementById("submitAll").style.display = "none";
+        }
     }, false);
 
     studyTimer.addEventListener('click', function() {
