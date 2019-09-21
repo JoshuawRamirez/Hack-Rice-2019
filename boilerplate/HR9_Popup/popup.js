@@ -71,11 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("data").appendChild(node);
     }, false);
 
-
-    function backgroundFunction() {
-        alert('Background, reporting for duty!')
-    }
-
     studyTimer.addEventListener('click', function() {
         var timerText_hr = document.getElementById('timerText_hr');
         var timerText_min = document.getElementById('timerText_min');
@@ -85,12 +80,9 @@ document.addEventListener('DOMContentLoaded', function() {
         milliTime = (timerText_sec.value * 1000) + (timerText_min.value * 60000) + (timerText_hr.value * 3600000)
             //alert(milliTime)
         chrome.runtime.getBackgroundPage(function(backgroundPage) {
-            backgroundPage.backgroundFunction()
+            backgroundPage.studyTimer(milliTime)
         })
-        setTimeout(function() {
-            //currentTime = Date.now() - startTime
-            //timerText_sec.value = currentTime
-            alert("Study Timer Done!")
-        }, milliTime);
+
     }, false);
+
 }, false);
