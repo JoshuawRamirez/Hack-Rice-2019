@@ -79,17 +79,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }, false);
 
 
-    studyTimer.addEventListener('click', function() {
-        var timerText_hr = document.getElementById('timerText_hr').value;
-        var timerText_min = document.getElementById('timerText_min').value;
-        var timerText_sec = document.getElementById('timerText_sec').value;
+    function backgroundFunction() {
+        alert('Background, reporting for duty!')
+    }
 
-        startTime = Date.now();
-        milliTime = (timerText_sec * 1000) + (timerText_min * 60000) + (timerText_hr * 3600000)
+    studyTimer.addEventListener('click', function() {
+        var timerText_hr = document.getElementById('timerText_hr');
+        var timerText_min = document.getElementById('timerText_min');
+        var timerText_sec = document.getElementById('timerText_sec');
+
+        //startTime = Date.now();
+        milliTime = (timerText_sec.value * 1000) + (timerText_min.value * 60000) + (timerText_hr.value * 3600000)
             //alert(milliTime)
+        chrome.runtime.getBackgroundPage(function(backgroundPage) {
+            backgroundPage.backgroundFunction()
+        })
         setTimeout(function() {
-            currentTime = Date.now() - startTime
-            timerText_hr = toString(currentTime)
+            //currentTime = Date.now() - startTime
+            //timerText_sec.value = currentTime
             alert("Study Timer Done!")
         }, milliTime);
     }, false);
