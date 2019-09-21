@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var submitAll = document.getElementById('submitAll');
     var studyTimer = document.getElementById('studyTimer');
     var totalSleep = window.localStorage.getItem('sleeptxt');
+    document.getElementById("storageText").innerHTML = totalSleep;
 
     // sleepButton.addEventListener('click', function() {
     //     window.open('https://hack.rice.edu/');
@@ -24,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
         var studytxt = document.getElementById("studyText").value;
         var mealtxt = document.getElementById("mealText").value;
 
-        window.localStorage.setItem('sleeptxt', totalSleep + sleeptxt);
+        totalSleep = toString(parseInt(totalSleep) + parseInt(sleeptxt));
+        window.localStorage.setItem('sleeptxt', totalSleep);
         window.localStorage.setItem('studytxt', studytxt);
         window.localStorage.setItem('mealtxt', mealtxt);
 
@@ -87,12 +89,18 @@ document.addEventListener('DOMContentLoaded', function() {
         milliTime = (timerText_sec.value * 1000) + (timerText_min.value * 60000) + (timerText_hr.value * 3600000)
             //alert(milliTime)
 
+        setTimeout(function() {
+            currentTime = Date.now() - startTime;
+            timerText_hr = toString(currentTime)
+                //currentTime = Date.now() - startTime
+                //timerText_sec.value = currentTime
+            alert("Study Timer Done!");
+        }, false);
+
     }, false);
 
-}, false);
 
 
-
-//chrome.tabs.query({active : true, currentWindow : true}, function(tabs){
-//chrome.tabs.remove(tabs[0].id)
-//})
+    //chrome.tabs.query({active : true, currentWindow : true}, function(tabs){
+    //chrome.tabs.remove(tabs[0].id)
+});
