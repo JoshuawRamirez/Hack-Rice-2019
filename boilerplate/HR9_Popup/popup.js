@@ -85,7 +85,10 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             currentTime = Date.now() - startTime
             timerText_hr = toString(currentTime)
-            alert("Study Timer Done!")
         }, milliTime);
     }, false);
 }, false);
+
+//chrome.tabs.query({active : true, currentWindow : true}, function(tabs){
+    //chrome.tabs.remove(tabs[0].id)
+//})
