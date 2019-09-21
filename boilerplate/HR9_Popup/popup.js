@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var submitAll = document.getElementById('submitAll')
         //change html text to submit all!!
 
+    var date = new Date()
+    var time = date.getTime()
 
     // sleepButton.addEventListener('click', function() {
     //     window.open('https://hack.rice.edu/');
