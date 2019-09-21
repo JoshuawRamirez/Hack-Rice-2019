@@ -1,3 +1,6 @@
+var testvar = 3
+
+
 document.addEventListener('DOMContentLoaded', function() {
 
     // var sleepButton = document.getElementById('sleepHours');
@@ -25,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
         var sleeptxt = document.getElementById("sleepText").value;
         var studytxt = document.getElementById("studyText").value;
         var mealtxt = document.getElementById("mealText").value;
+        testvar += 1;
+        alert(testvar);
         if (sleeptxt === "" || studytxt === "" || mealtxt === "") {
             alert("Please fill out the entire form")
         } else {
