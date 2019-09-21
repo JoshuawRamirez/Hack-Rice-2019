@@ -12,11 +12,6 @@
         "persistent": true
     },
     "permissions": [
-<<<<<<< HEAD
         "activeTab", "alarms"
-=======
-        "activeTab",
-        "tabs"
->>>>>>> 59d0862fe4a1f5b5320e3835807c033721a359f4
     ]
 }
