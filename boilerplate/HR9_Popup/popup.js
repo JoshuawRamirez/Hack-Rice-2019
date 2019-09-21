@@ -1,4 +1,3 @@
-var testvar = 3
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -26,8 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
         var sleeptxt = document.getElementById("sleepText").value;
         var studytxt = document.getElementById("studyText").value;
         var mealtxt = document.getElementById("mealText").value;
-        testvar += 1;
-        alert(testvar);
         if (sleeptxt === "" || studytxt === "" || mealtxt === "") {
             alert("Please fill out the entire form")
         } else {
@@ -58,8 +55,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert("Please only enter numbers");
             }
         }
-        document.writeln("Data: " + " Sleep Time: " + sleeptxt + " Study Time: \
-        " + studytxt + " Meals: " + mealtxt)
+        //adds sleep data to bottom of pop up
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode("Hours of Sleep: " + parseFloat(sleeptxt));
+        node.appendChild(textnode);
+        document.getElementById("data").appendChild(node);
+
+        //adds study data to bottom of pop up
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode("Hours of Study: " + parseFloat(studytxt));
+        node.appendChild(textnode);
+        document.getElementById("data").appendChild(node);
+
+        //adds meal data to bottom of pop up
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode("Meals Eaten: " + parseFloat(mealtxt));
+        node.appendChild(textnode);
+        document.getElementById("data").appendChild(node);
     }, false);
 
 
