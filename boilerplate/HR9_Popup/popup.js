@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function() {
 
     // var sleepButton = document.getElementById('sleepHours');
@@ -7,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // var mealsButton = document.getElementById('mealsEaten');
     var submitAll = document.getElementById('submitAll');
     var studyTimer = document.getElementById('studyTimer');
+    var totalSleep = window.localStorage.getItem('sleeptxt');
 
     // sleepButton.addEventListener('click', function() {
     //     window.open('https://hack.rice.edu/');
@@ -24,6 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
         var sleeptxt = document.getElementById("sleepText").value;
         var studytxt = document.getElementById("studyText").value;
         var mealtxt = document.getElementById("mealText").value;
+
+        window.localStorage.setItem('sleeptxt', totalSleep + sleeptxt);
+        window.localStorage.setItem('studytxt', studytxt);
+        window.localStorage.setItem('mealtxt', mealtxt);
+
+
         if (sleeptxt === "" || studytxt === "" || mealtxt === "") {
             alert("Please fill out the entire form")
         } else {
@@ -74,17 +79,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }, false);
 
 
-    studyTimer.addEventListener('click', function() {
-        var timerText_hr = document.getElementById('timerText_hr').value;
-        var timerText_min = document.getElementById('timerText_min').value;
-        var timerText_sec = document.getElementById('timerText_sec').value;
+    function backgroundFunction() {
+        alert('Background, reporting for duty!')
+    }
 
-        startTime = Date.now();
-        milliTime = (timerText_sec * 1000) + (timerText_min * 60000) + (timerText_hr * 3600000)
+    studyTimer.addEventListener('click', function() {
+        var timerText_hr = document.getElementById('timerText_hr');
+        var timerText_min = document.getElementById('timerText_min');
+        var timerText_sec = document.getElementById('timerText_sec');
+
+        //startTime = Date.now();
+        milliTime = (timerText_sec.value * 1000) + (timerText_min.value * 60000) + (timerText_hr.value * 3600000)
             //alert(milliTime)
+        chrome.runtime.getBackgroundPage(function(backgroundPage) {
+            backgroundPage.backgroundFunction()
+        })
         setTimeout(function() {
+<<<<<<< HEAD
             currentTime = Date.now() - startTime
             timerText_hr = toString(currentTime)
+=======
+            //currentTime = Date.now() - startTime
+            //timerText_sec.value = currentTime
+            alert("Study Timer Done!")
+>>>>>>> 7cac944b7319cca64fbd82fee375628eb626a869
         }, milliTime);
     }, false);
 }, false);
