@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // var mealsButton = document.getElementById('mealsEaten');
     var submitAll = document.getElementById('submitAll');
     var studyTimer = document.getElementById('studyTimer');
+    var totalSleep = window.localStorage.getItem('sleeptxt');
 
     // sleepButton.addEventListener('click', function() {
     //     window.open('https://hack.rice.edu/');
@@ -22,6 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
         var sleeptxt = document.getElementById("sleepText").value;
         var studytxt = document.getElementById("studyText").value;
         var mealtxt = document.getElementById("mealText").value;
+
+        window.localStorage.setItem('sleeptxt', totalSleep + sleeptxt);
+        window.localStorage.setItem('studytxt', studytxt);
+        window.localStorage.setItem('mealtxt', mealtxt);
+
+
         if (sleeptxt === "" || studytxt === "" || mealtxt === "") {
             alert("Please fill out the entire form")
         } else {
