@@ -104,10 +104,20 @@ document.addEventListener('DOMContentLoaded', function() {
         var timerText_sec = document.getElementById('timerText_sec');
 
         //startTime = Date.now();
-        minTime = (timerText_sec.value / 60) + (timerText_min.value) + (timerText_hr.value * 60);
+        minTime = (timerText_sec.value * 1000) + (timerText_min.value * 60 * 1000) + (timerText_hr.value * 60 * 60 * 1000);
         //alert(milliTime)
         //alert(minTime)
-        window.setAlarm(parseFloat(minTime));
+        // chrome.alarms.create({ delayInMinutes: parseInt(minTime) })
+        // console.log("create alarm")
+        // chrome.alarms.getAll(console.log)
+
+        //window.setAlarm(parseFloat(minTime));
+
+        //window.setTimer(parseFloat(minTime));
+
+        chrome.runtime.sendMessage({ minTime });
+        close();
+
         //setTimeout(function() {
         // currentTime = Date.now() - startTime;
         //timerText_hr = toString(currentTime)
