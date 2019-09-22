@@ -6,7 +6,7 @@ body {
 h1 {
     text-align: center;
     font-size: 25px;
-    color: blue
+    color:rgb(0, 128, 128)
 }
 
 
@@ -16,10 +16,10 @@ h1 {
 }
 
 .buttons {
-    background-color: rgb(73, 116, 233);
-    border: solid 1px rgb(73, 116, 233);
+    background-color: rgb(201, 201, 201);
+    border: solid 1px rgb(201, 201, 201);
     border-radius: 6px;
-    color: white;
+    color: rgb(0, 128, 128);
     padding: 3px 12px;
     text-align: center;
     text-decoration: none;

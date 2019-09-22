@@ -83,9 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
         node.appendChild(textnode);
         node.style.margin = '40px';
         if (parseFloat(sleeptxt) < 8) {
-            node.style.color = 'red';
+            node.style.color = 'gray';
         } else {
-            node.style.color = 'white';
+            node.style.color = 'gray';
         }
         document.getElementById("data").appendChild(node);
 
@@ -95,9 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
         node.appendChild(textnode);
         node.style.margin = '40px';
         if (parseFloat(studytxt) >= 1 && parseFloat(studytxt) < 5) {
-            node.style.color = 'white';
+            node.style.color = 'gray';
         } else {
-            node.style.color = 'red';
+            node.style.color = 'gray';
         }
         document.getElementById("data").appendChild(node);
 
@@ -107,9 +107,9 @@ document.addEventListener('DOMContentLoaded', function() {
         node.appendChild(textnode);
         node.style.margin = '40px';
         if (parseFloat(mealtxt) === 3) {
-            node.style.color = 'white';
+            node.style.color = 'gray';
         } else {
-            node.style.color = 'red';
+            node.style.color = 'gray';
         }
         document.getElementById("data").appendChild(node);
 
