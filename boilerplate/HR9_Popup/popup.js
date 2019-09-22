@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // var mealsButton = document.getElementById('mealsEaten');
     var submitAll = document.getElementById('submitAll');
     var studyTimer = document.getElementById('studyTimer');
-    var totalSleep = window.localStorage.getItem('sleeptxt');
-    document.getElementById("storageText").innerHTML = totalSleep;
+    var sleepStorage = window.localStorage.getItem('sleeptxt') || 0;
+    document.getElementById("storageText").innerHTML = sleepStorage;
 
     // sleepButton.addEventListener('click', function() {
     //     window.open('https://hack.rice.edu/');
@@ -24,12 +24,22 @@ document.addEventListener('DOMContentLoaded', function() {
         var sleeptxt = document.getElementById("sleepText").value;
         var studytxt = document.getElementById("studyText").value;
         var mealtxt = document.getElementById("mealText").value;
-
-        totalSleep = toString(parseInt(totalSleep) + parseInt(sleeptxt));
-        window.localStorage.setItem('sleeptxt', totalSleep);
+        //totalSleep = toString(parseInt(totalSleep) + parseInt(sleeptxt));
+        
+        // window.localStorage.setItem('sleeptxt', totalSleep);
         window.localStorage.setItem('studytxt', studytxt);
         window.localStorage.setItem('mealtxt', mealtxt);
+        //var currentSleep = 0;
+        //var totalSleep = window.localStorage.getItem('sleeptxt');
+        var currentSleep = window.localStorage.getItem('sleeptxt') || 0;
+        console.log("currentSleep", currentSleep);
+        console.log("sleeptxt", sleeptxt);
+        var sum = parseInt(currentSleep) + parseInt(sleeptxt);
 
+        window.localStorage.setItem('sleeptxt', sum.toString());
+        console.log(sum);
+
+        document.getElementById("storageText").innerHTML = sum;
 
         if (sleeptxt === "" || studytxt === "" || mealtxt === "") {
             alert("Please fill out the entire form")
