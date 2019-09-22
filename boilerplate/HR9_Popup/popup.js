@@ -5,8 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // var mealsButton = document.getElementById('mealsEaten');
     var submitAll = document.getElementById('submitAll');
     var studyTimer = document.getElementById('studyTimer');
-    var totalSleep = window.localStorage.getItem('sleeptxt');
-    document.getElementById("storageText").innerHTML = totalSleep;
+
+    //showing total sleep hours
+    var sleepStorage = window.localStorage.getItem('sleeptxt') || 0;
+    document.getElementById("storageText").innerHTML = sleepStorage;
+
+    //showing total study hours
+    var studyStorage = window.localStorage.getItem('studytxt') || 0;
+    document.getElementById("studyStorage").innerHTML = studyStorage;
 
     // sleepButton.addEventListener('click', function() {
     //     window.open('https://hack.rice.edu/');
@@ -24,12 +30,22 @@ document.addEventListener('DOMContentLoaded', function() {
         var sleeptxt = document.getElementById("sleepText").value;
         var studytxt = document.getElementById("studyText").value;
         var mealtxt = document.getElementById("mealText").value;
+        //totalSleep = toString(parseInt(totalSleep) + parseInt(sleeptxt));
 
-        totalSleep = toString(parseInt(totalSleep) + parseInt(sleeptxt));
-        window.localStorage.setItem('sleeptxt', totalSleep);
-        window.localStorage.setItem('studytxt', studytxt);
+        // window.localStorage.setItem('sleeptxt', totalSleep);
+        //window.localStorage.setItem('studytxt', studytxt);
         window.localStorage.setItem('mealtxt', mealtxt);
+        //var currentSleep = 0;
+        //var totalSleep = window.localStorage.getItem('sleeptxt');
+        var currentSleep = window.localStorage.getItem('sleeptxt') || 0;
+        var sum = parseInt(currentSleep) + parseInt(sleeptxt);
+        window.localStorage.setItem('sleeptxt', sum.toString());
+        document.getElementById("storageText").innerHTML = sum;
 
+        var currentStudy = window.localStorage.getItem('studytxt') || 0;
+        var sum2 = parseInt(currentStudy) + parseInt(studytxt);
+        window.localStorage.setItem('studytxt', sum2.toString());
+        document.getElementById("studyStorage").innerHTML = sum2;
 
         if (sleeptxt === "" || studytxt === "" || mealtxt === "") {
             alert("Please fill out the entire form")
@@ -67,9 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
         node.appendChild(textnode);
         node.style.margin = '40px';
         if (parseFloat(sleeptxt) < 8) {
-            node.style.color = 'red';
+            node.style.color = 'gray';
         } else {
-            node.style.color = 'white';
+            node.style.color = 'gray';
         }
         document.getElementById("data").appendChild(node);
 
@@ -79,9 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
         node.appendChild(textnode);
         node.style.margin = '40px';
         if (parseFloat(studytxt) >= 1 && parseFloat(studytxt) < 5) {
-            node.style.color = 'white';
+            node.style.color = 'gray';
         } else {
-            node.style.color = 'red';
+            node.style.color = 'gray';
         }
         document.getElementById("data").appendChild(node);
 
@@ -91,11 +107,15 @@ document.addEventListener('DOMContentLoaded', function() {
         node.appendChild(textnode);
         node.style.margin = '40px';
         if (parseFloat(mealtxt) === 3) {
-            node.style.color = 'white';
+            node.style.color = 'gray';
         } else {
-            node.style.color = 'red';
+            node.style.color = 'gray';
         }
         document.getElementById("data").appendChild(node);
+
+        if (sleeptxt !== "" && studytxt !== "" && mealtxt !== "") {
+            document.getElementById("submitAll").style.display = "none";
+        }
     }, false);
 
     studyTimer.addEventListener('click', function() {
