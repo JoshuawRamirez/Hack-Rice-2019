@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var studyStorage = window.localStorage.getItem('studytxt') || 0;
     document.getElementById("studyStorage").innerHTML = studyStorage;
 
+    var counter = window.localStorage.getItem('count') || 0;
+
     // sleepButton.addEventListener('click', function() {
     //     window.open('https://hack.rice.edu/');
     // }, false);
@@ -27,23 +29,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // }, false);
 
     submitAll.addEventListener('click', function() {
+        
         var sleeptxt = document.getElementById("sleepText").value;
         var studytxt = document.getElementById("studyText").value;
         var mealtxt = document.getElementById("mealText").value;
         //totalSleep = toString(parseInt(totalSleep) + parseInt(sleeptxt));
-
+        counter = parseInt(counter) + parseInt(1);
+        window.localStorage.setItem('count', counter.toString());
+        console.log(counter);
         // window.localStorage.setItem('sleeptxt', totalSleep);
         //window.localStorage.setItem('studytxt', studytxt);
         window.localStorage.setItem('mealtxt', mealtxt);
         //var currentSleep = 0;
         //var totalSleep = window.localStorage.getItem('sleeptxt');
         var currentSleep = window.localStorage.getItem('sleeptxt') || 0;
-        var sum = parseInt(currentSleep) + parseInt(sleeptxt);
+        var sum = (parseInt(currentSleep) + parseInt(sleeptxt)) / counter;
         window.localStorage.setItem('sleeptxt', sum.toString());
         document.getElementById("storageText").innerHTML = sum;
 
         var currentStudy = window.localStorage.getItem('studytxt') || 0;
-        var sum2 = parseInt(currentStudy) + parseInt(studytxt);
+        var sum2 = (parseInt(currentStudy) + parseInt(studytxt)) / counter;
         window.localStorage.setItem('studytxt', sum2.toString());
         document.getElementById("studyStorage").innerHTML = sum2;
 
