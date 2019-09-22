@@ -9,7 +9,7 @@
     },
     "background": {
         "scripts": ["timer.js"],
-        "persistent": true
+        "persistent": false
     },
     "permissions": [
         "activeTab", "alarms"

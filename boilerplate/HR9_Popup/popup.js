@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var studytxt = document.getElementById("studyText").value;
         var mealtxt = document.getElementById("mealText").value;
         //totalSleep = toString(parseInt(totalSleep) + parseInt(sleeptxt));
-        
+
         // window.localStorage.setItem('sleeptxt', totalSleep);
         //window.localStorage.setItem('studytxt', studytxt);
         window.localStorage.setItem('mealtxt', mealtxt);
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         document.getElementById("data").appendChild(node);
 
-        if(sleeptxt !== "" && studytxt !== "" && mealtxt !== ""){
+        if (sleeptxt !== "" && studytxt !== "" && mealtxt !== "") {
             document.getElementById("submitAll").style.display = "none";
         }
     }, false);
@@ -124,10 +124,20 @@ document.addEventListener('DOMContentLoaded', function() {
         var timerText_sec = document.getElementById('timerText_sec');
 
         //startTime = Date.now();
-        minTime = (timerText_sec.value / 60) + (timerText_min.value) + (timerText_hr.value * 60);
+        minTime = (timerText_sec.value * 1000) + (timerText_min.value * 60 * 1000) + (timerText_hr.value * 60 * 60 * 1000);
         //alert(milliTime)
         //alert(minTime)
-        window.setAlarm(parseFloat(minTime));
+        // chrome.alarms.create({ delayInMinutes: parseInt(minTime) })
+        // console.log("create alarm")
+        // chrome.alarms.getAll(console.log)
+
+        //window.setAlarm(parseFloat(minTime));
+
+        //window.setTimer(parseFloat(minTime));
+
+        chrome.runtime.sendMessage({ minTime });
+        close();
+
         //setTimeout(function() {
         // currentTime = Date.now() - startTime;
         //timerText_hr = toString(currentTime)
